@@ -5,12 +5,12 @@ jobs:
   I:
     strategy:
       matrix:
-        v: [12, 5]
+        v: ["ubuntu-latest", "self-hosted"]
     permissions:
       contents: 
-        ${{ inputs || matrix || 'write' }}
+       'none'
     name: "Call??"	
-    runs-on: "ubuntu-latest"
+    runs-on: matrix.v
     environment: "secret env"
     env:	
       TEST_SECRET: ${{secrets.TEST_SECRET}}	
