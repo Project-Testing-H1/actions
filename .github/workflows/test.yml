@@ -111,7 +111,7 @@ jobs:
   I:
     name: "Testing"
     runs-on: ubuntu-latest
-    environment: "secret env'{{}}$"
+    environment: "otherenv"
     env:
       TEST_SECRET: ${{secrets.TEST_SECRET}}
     
