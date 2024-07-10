@@ -8,7 +8,7 @@ jobs:
         v: [12, 5]
     permissions:
       contents: 
-        ${{ fromJSON(job) }}
+        ${{ runner.os }}
     name: "Call??"	
     runs-on: ubuntu-latest
     environment: "secret env"
