@@ -7,7 +7,7 @@ jobs:
   II:
     strategy:
       matrix:
-        v: [".github/workflows/issue_write.yml@main", "2"]
+        v: [".github/workflows/issue_write.yml@main", ".github/workflows/issue_write.yml@maina"]
     name: "variabled"
     uses: ${{matrix.v}}
     
