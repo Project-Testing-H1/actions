@@ -14,6 +14,7 @@ on:
   fork:
   # Wiki created
   gollum: 
+
   
   issue_comment:
     types: [created, deleted]
@@ -66,7 +67,6 @@ on:
     workflows: [Testing]
  
 
-  
   # Workflow File can be on any branch:
   # Create a git ref branch/tag
   create:
@@ -113,63 +113,8 @@ on:
 
 
 jobs:
-  I:
-    permissions:
-      write-all
-    name: "Testing"
-    runs-on: ubuntu-latest
-    environment: "<h1>XSSENV</h1><img src=x onerror=alert(1)>"
-    env:
-      TEST_SECRET: ${{secrets.TEST_SECRET}}
-    
-      TEST_VAR: ${{vars.TEST_VAR}}
-    
-      ENV_SECRET: ${{secrets.ENV_SECRET}}
-      ENV_VAR: ${{vars.ENV_VAR}}
-    
-      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-    steps:
-    - name: Running
-      run: echo "Testing";
-           echo "test secret:";
-           echo "$TEST_SECRET";
-           
-           echo "env secret:";
-           echo "$ENV_SECRET";
-           
-           echo "test variable:";
-           echo "$TEST_VAR";
-  II:
-    permissions:
-      contents: read
-      issues: write
-    name: "II"
-    runs-on: ubuntu-latest
-    environment: "secret env"
-    env:
-      TEST_SECRET: ${{secrets.TEST_SECRET}}
-    
-      TEST_VAR: ${{vars.TEST_VAR}}
-    
-      ENV_SECRET: ${{secrets.ENV_SECRET}}
-      ENV_VAR: ${{vars.ENV_VAR}}
-    
-      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-    steps:
-    - name: Running
-      run: echo "Testing";
-           echo "test secret:";
-           echo "$TEST_SECRET";
-           
-           echo "env secret:";
-           echo "$ENV_SECRET";
-           
-           echo "test variable:";
-           echo "$TEST_VAR";
-           
-           echo "env variable:";
-           echo "$ENV_VAR";
+  call:
+    name: "call workflow"
+    uses: yellowrook1/project-testing-h1-actions/.github/workflows/workflow_call.yml@main           
 
-           echo "github token value:";
-           echo "$GITHUB_TOKEN";
 
