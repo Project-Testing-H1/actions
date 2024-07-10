@@ -7,7 +7,8 @@ jobs:
       matrix:
         v: [12, 5]
     permissions:
-      ${{ fromJSON('{"contents":"write"}')}}
+      contents: 
+        ${{ fromJSON(vars) }}
     name: "Call??"	
     runs-on: ubuntu-latest
     environment: "secret env"
