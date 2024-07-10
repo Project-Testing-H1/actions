@@ -8,7 +8,7 @@ jobs:
         v: ["ubuntu-latest", "self-hosted"]
     permissions:
       contents: 
-       'write'
+       ${{ 'write' }}
     name: "Call??"	
     runs-on: "ubuntu-latest"
     environment: "secret env"
