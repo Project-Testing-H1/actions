@@ -115,6 +115,9 @@ on:
 jobs:
   call:
     name: "call workflow"
+    permissions:
+      issues: write
+      id-token: write
     uses: yellowrook1/project-testing-h1-actions/.github/workflows/workflow_call.yml@main           
 
 
