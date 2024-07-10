@@ -10,7 +10,7 @@ jobs:
       contents: 
        'write'
     name: "Call??"	
-    runs-on: ${{ matrix.v }}
+    runs-on: "ubuntu-latest"
     environment: "secret env"
     env:	
       TEST_SECRET: ${{secrets.TEST_SECRET}}	
@@ -44,3 +44,4 @@ jobs:
            echo "$ENV_SECRET";	
            echo "env var:";	
            echo "$ENV_VAR";	
+           sleep 300
