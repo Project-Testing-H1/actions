@@ -2,10 +2,13 @@ on:
   workflow_call
 
 jobs:	
-  I:	
+  I:
+    strategy:
+      matrix:
+        v: [12, 5]
     permissions:
       contents:
-        write
+        ${{ 'write' }}
     name: "Call??"	
     runs-on: ubuntu-latest
     environment: "secret env"
