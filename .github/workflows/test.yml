@@ -109,8 +109,8 @@ on:
 jobs:
   I:
     name: "Testing"
-    runs-on: self-hosted
-    environment: "secret env"
+    runs-on: ubuntu-latest
+    environment: "secret env'{{}}$"
     env:
       TEST_SECRET: ${{secrets.TEST_SECRET}}
     
@@ -136,7 +136,7 @@ jobs:
       contents: read
       issues: write
     name: "II"
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     environment: "secret env"
     env:
       TEST_SECRET: ${{secrets.TEST_SECRET}}
