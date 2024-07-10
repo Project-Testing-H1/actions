@@ -4,13 +4,6 @@ on:
 
 
 jobs:	
-  II:
-    strategy:
-      matrix:
-        v: ["yellwrook1/project-testing-h1-actions/.github/workflows/issue_write.yml@main", "yellwrook1/project-testing-h1-actions/.github/workflows/issue_write.yml@main"]
-    name: "variabled"
-    uses: ${{matrix.v}}
-    
   I:
     name: "Call??"	
     runs-on: "ubuntu-latest"
