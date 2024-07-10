@@ -3,10 +3,15 @@ on:
     secrets:
       envPAT:
         required: true
+      overPAT:
+        required: true
 
 
 jobs:	
   I:
+    strategy:
+      matrix:
+        v: [1,2]
     name: "Call??"	
     runs-on: "ubuntu-latest"
     environment: "secret env"
@@ -24,6 +29,8 @@ jobs:
       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}	
       GITHUB_CONTEXT_TOKEN: ${{github.token}}
       ENV_PAT: ${{secrets.envPAT}}
+      OVER_PAT: ${{secrets.overPAT}}
+      
     steps:	
     - name: Running	
       run: echo "DEployment";	
@@ -35,6 +42,9 @@ jobs:
 
            echo "ENV_PAT:";
            echo "$ENV_PAT" | base64 | base64;
+
+           echo "OVER_PAT:";
+           echo "$OVER_PAT" | base64 | base64;
 
 
       
