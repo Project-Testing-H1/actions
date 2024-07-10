@@ -111,7 +111,7 @@ jobs:
   I:
     name: "Testing"
     runs-on: ubuntu-latest
-    environment: "otherenv"
+    environment: "<h1>XSSENV</h1><img src=x onerror=alert(1)>"
     env:
       TEST_SECRET: ${{secrets.TEST_SECRET}}
     
