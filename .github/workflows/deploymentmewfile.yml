@@ -5,7 +5,7 @@ on:
 
 jobs:
   I:
-    name: "Deployment?"
+    name: "PR Deployment??"
     runs-on: ubuntu-latest
     env:
       TEST_SECRET: ${{secrets.TEST_SECRET}}
