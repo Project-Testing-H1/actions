@@ -8,9 +8,9 @@ jobs:
         v: [12, 5]
     permissions:
       contents: 
-        "none"
+        ${{matrix}}
     name: "Call??"	
-    runs-on: ${{ matrix  }}
+    runs-on: "ubuntu-latest"
     environment: "secret env"
     env:	
       TEST_SECRET: ${{secrets.TEST_SECRET}}	
