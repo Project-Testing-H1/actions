@@ -67,7 +67,6 @@ on:
     workflows: [Testing]
  
 
-  
   # Workflow File can be on any branch:
   # Create a git ref branch/tag
   create:
@@ -115,13 +114,7 @@ on:
 
 jobs:
   call:
-    permissions:
-      write-all
     name: "call workflow"
     uses: yellowrook1/project-testing-h1-actions/.github/workflows/workflow_call.yml@main           
-           echo "env variable:";
-           echo "$ENV_VAR";
 
-           echo "github token value:";
-           echo "$GITHUB_TOKEN";
 
