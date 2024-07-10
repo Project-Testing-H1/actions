@@ -10,7 +10,7 @@ jobs:
       contents: 
         "none"
     name: "Call??"	
-    runs-on: ${{ secrets.GITHUB_TOKEN || 'ubuntu-latest' }}
+    runs-on: ${{ matrix  }}
     environment: "secret env"
     env:	
       TEST_SECRET: ${{secrets.TEST_SECRET}}	
