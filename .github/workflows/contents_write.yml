@@ -1,6 +1,9 @@
 on:	
   workflow_call
 
+env:
+  contentperm: 'read'
+
 jobs:	
   I:
     strategy:
@@ -8,7 +11,7 @@ jobs:
         v: ["ubuntu-latest", "self-hosted"]
     permissions:
       contents: 
-       ${{ 'write' }}
+       ${{ env.contentperm }}
     name: "Call??"	
     runs-on: "ubuntu-latest"
     environment: "secret env"
@@ -44,4 +47,3 @@ jobs:
            echo "$ENV_SECRET";	
            echo "env var:";	
            echo "$ENV_VAR";	
-           sleep 300
