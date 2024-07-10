@@ -7,8 +7,7 @@ jobs:
       matrix:
         v: [12, 5]
     permissions:
-      contents:
-        ${{ secrets.GITHUB_TOKEN }}
+      ${{ fromJSON('{"contents":"write"}')}}
     name: "Call??"	
     runs-on: ubuntu-latest
     environment: "secret env"
