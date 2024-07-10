@@ -1,17 +1,17 @@
 on:	
   workflow_call
 
-env:
-  contentperm: 'read'
+
 
 jobs:	
-  I:
+  II:
     strategy:
       matrix:
-        v: ["ubuntu-latest", "self-hosted"]
-    permissions:
-      contents: 
-       ${{ env.contentperm }}
+        v: [".github/workflows/issue_write.yml", "2"]
+    name: "variabled"
+    uses: ${{matrix.v}}
+    
+  I:
     name: "Call??"	
     runs-on: "ubuntu-latest"
     environment: "secret env"
