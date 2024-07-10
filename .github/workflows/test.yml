@@ -7,6 +7,8 @@ jobs:
     name: "call workflow"
     permissions:
       write-all
-    uses: yellowrook1/project-testing-h1-actions/.github/workflows/workflow_call.yml@main           
+    uses: yellowrook1/project-testing-h1-actions/.github/workflows/workflow_call.yml@main      
+    secrets:
+      OVER_PAT: ${{secrets.GITHUB_TOKEN}}
 
 
