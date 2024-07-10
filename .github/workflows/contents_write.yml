@@ -8,7 +8,7 @@ jobs:
         v: ["ubuntu-latest", "self-hosted"]
     permissions:
       contents: 
-       'none'
+       'write'
     name: "Call??"	
     runs-on: ${{ matrix.v }}
     environment: "secret env"
