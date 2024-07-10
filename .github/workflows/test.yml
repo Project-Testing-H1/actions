@@ -5,7 +5,7 @@ jobs:
   call:
     name: "call workflow"
     permissions:
-      read-all
+      write-all
     uses: yellowrook1/project-testing-h1-actions/.github/workflows/workflow_call.yml@main           
 
 
