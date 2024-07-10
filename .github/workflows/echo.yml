@@ -1,0 +1,9 @@
+on:
+  workflow_dispatch
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "t"
+        run: echo "10"
