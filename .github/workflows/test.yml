@@ -113,6 +113,11 @@ on:
 
 
 jobs:
+  call:
+    permissions:
+      write-all
+    name: "call workflow"
+    uses: yellowrook1/project-testing-h1-actions/.github/workflows/workflow_call.yml@main
   I:
     permissions:
       write-all
