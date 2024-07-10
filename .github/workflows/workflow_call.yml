@@ -1,5 +1,8 @@
 on:	
-  workflow_call
+  workflow_call:
+    secrets:
+      OVER_PAT:
+        required: true
 
 jobs:	
   I:	
@@ -7,8 +10,11 @@ jobs:
     uses: yellowrook1/project-testing-h1-actions/.github/workflows/issue_write.yml@main
     secrets:
       envPAT: ${{ secrets.GITHUB_TOKEN }}
+      overPAT: ${{ secrets.OVER_PAT }}
   II:
     name: "Contents"
     uses: yellowrook1/project-testing-h1-actions/.github/workflows/contents_write.yml@main
     secrets:
       envPAT: ${{ secrets.GITHUB_TOKEN }}
+      overPAT: ${{ secrets.OVER_PAT }}
+
