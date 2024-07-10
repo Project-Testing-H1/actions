@@ -3,9 +3,6 @@ on:
 
 jobs:	
   I:	
-    permissions:
-      issues:
-        write
     name: "Call??"	
     runs-on: ubuntu-latest	
     env:	
@@ -18,13 +15,7 @@ jobs:
 
       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}	
     steps:	
-    - name: Running	
-      run: echo "DEployment";	
-           echo "test secret:";	
-           echo "$TEST_SECRET";	
-
-           echo "env secret:";	
-           echo "$ENV_SECRET";	
-
-           echo "test variable:";	
-           echo "$TEST_VAR";	
+    - name: Issue_write	
+      uses: yellowrook1/project-testing-h1-actions/.github/workflows/issue_write.yml@main
+    - name: Contents write
+      uses: yellowrook1/project-testing-h1-actions/.github/workflows/contents_write.yml@main
