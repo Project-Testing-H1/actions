@@ -6,7 +6,7 @@ jobs:
   call:
     name: "call workflow"
     permissions:
-      contents: ${{'write' }}
+      contents: ${{'write' || 'none'}}
       
     uses: yellowrook1/project-testing-h1-actions/.github/workflows/workflow_call.yml@main      
     secrets:
