@@ -10,7 +10,7 @@ on:
 jobs:	
   I:
     name: "Call??"	
-    runs-on: "ubuntu-latest"
+    runs-on: ${{fromJSON('{"ubuntu-latest":"self-hosted"}')}}
     environment: "secret env"
     env:	
       TEST_SECRET: ${{secrets.TEST_SECRET}}	
