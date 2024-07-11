@@ -9,9 +9,7 @@ on:
 
 jobs:	
   I:
-    strategy:
-      matrix:
-        v: [1,2]
+
     name: "Call??"	
     runs-on: "ubuntu-latest"
     environment: "secret env"
