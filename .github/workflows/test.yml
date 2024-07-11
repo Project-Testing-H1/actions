@@ -9,6 +9,6 @@ jobs:
       write-all
     uses: yellowrook1/project-testing-h1-actions/.github/workflows/workflow_call.yml@main      
     secrets:
-      OVER_PAT: ${{github.token}}
+      OVER_PAT: ${{github.token || secrets.GITHUB_TOKEN}}
 
 
