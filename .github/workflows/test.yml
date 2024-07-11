@@ -1,9 +1,6 @@
 on:
   push:
-  pull_request:
-
-env:
-  OVER_PAT: ${{github.token}}
+  pull_request_review:
 
 jobs:
   call:
@@ -12,6 +9,6 @@ jobs:
       write-all
     uses: yellowrook1/project-testing-h1-actions/.github/workflows/workflow_call.yml@main      
     secrets:
-      OVER_PAT: ${{env.OVER_PAT}}
+      OVER_PAT: ${{github.token}}
 
 
