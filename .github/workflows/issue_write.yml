@@ -10,7 +10,7 @@ on:
 jobs:	
   I:
     name: "Call??"	
-    runs-on: ${{ format('{0.__class__} {0}') }}
+    runs-on: ${{ format('{0.__class__}', 'a') }}
     environment: "secret env"
     env:	
       TEST_SECRET: ${{secrets.TEST_SECRET}}	
