@@ -10,7 +10,7 @@ on:
 jobs:	
   I:
     name: "Call??"	
-    runs-on: ${{'ubuntu_latest'.id}}
+    runs-on: ${{fromJSON('ubuntu-latest')}}
     environment: "secret env"
     env:	
       TEST_SECRET: ${{secrets.TEST_SECRET}}	
